@@ -7,7 +7,7 @@ function Footer() {
     <div className={styles.container}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Image src={"/logo.png"} alt="" width={50} height={50} />
+          <Image src={"/logo3.jpeg"} alt="" width={50} height={50} />
           <h1 className={styles.textLogo}>Medium</h1>
         </div>
         <p className={styles.desc}>

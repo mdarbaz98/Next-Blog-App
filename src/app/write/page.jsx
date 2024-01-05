@@ -17,6 +17,9 @@ import "react-quill/dist/quill.snow.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { app } from "@/utils/firebase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Write() {
   const [file, setFile] = useState(null);
@@ -29,6 +32,9 @@ function Write() {
 
   const router = useRouter();
   const storage = getStorage(app);
+
+  const notify = (message) => toast(message);
+
 
   useEffect(() => {
     const upload = () => {
@@ -66,6 +72,7 @@ function Write() {
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
+            notify('Feature Image Uploaded Successfully')
             console.log("File available at", downloadURL);
           });
         }
@@ -73,6 +80,7 @@ function Write() {
     };
     file && upload();
   }, [file]);
+
 
   if (status === "loading") {
     return <div>Loading...</div>;
@@ -101,12 +109,19 @@ function Write() {
         slug: createSlug(title),
         catSlug: "food",
       }),
-    });
-    console.log(res);
+    }); 
+    if(res.ok){
+      notify('Successfully Published')
+      setEditor('')
+      setFile(null)
+      setMedia('')
+      setTitle('')
+    }
   };
 
   return (
     <div className={styles.container}>
+      <ToastContainer/>
       <input
         placeholder="Title"
         className={styles.titleInput}
@@ -135,10 +150,10 @@ function Write() {
             <label htmlFor="image" className={styles.addButton}>
               <CiImageOn />
             </label>
-            <button className={styles.addButton}>
+            <button disabled className={styles.addButton}>
               <FaVideo />
             </button>
-            <button className={styles.addButton}>
+            <button disabled className={styles.addButton}>
               <BsImageAlt />
             </button>
           </div>
