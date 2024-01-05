@@ -9,13 +9,14 @@ import { UserAvatar } from "../userAvatar/UserAvatar";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { commentsFetcher } from "@/api/comments";
+import baseURL from "@/api/baseUrl";
 
 export default function Comment({ postSlug }) {
 
   const [comment , setComment] = useState('')
   const { status } = useSession();
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `${baseURL}api/comments?postSlug=${postSlug}`,
     commentsFetcher
   );
 

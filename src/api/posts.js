@@ -1,5 +1,7 @@
+import baseURL from "./baseUrl";
+
 export const getSinglePost = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    const res = await fetch(`${baseURL}/api/posts/${slug}`, {
       cache: "no-store",
     });
   
@@ -11,7 +13,7 @@ export const getSinglePost = async (slug) => {
   };  
 
 export const getPosts = async (type) => {
-    const res = await fetch(`http://localhost:3000/api/posts?type=${type}`);
+    const res = await fetch(`${baseURL}/api/posts?type=${type}`);
     const data = await res.json();
     if (!res.ok) {
       throw Error(`Request failed with status ${res.status}: ${res.statusText}`);
@@ -21,7 +23,7 @@ export const getPosts = async (type) => {
 
   export const getPostsWithCategory = async (page, category) => {
     const res = await fetch(
-      `http://localhost:3000/api/posts?page=${page}&category=${category || ""}`,
+      `${baseURL}/api/posts?page=${page}&category=${category || ""}`,
       {
         cache: "no-store",
       }
