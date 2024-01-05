@@ -1,0 +1,11 @@
+.title{
+    text-align: center;
+    /* background-color: lightgray; */
+    border-radius: 5px;
+    padding: 10px;
+    text-transform: capitalize;
+}
+.content{
+    display: flex;
+    gap: 50px;
+}

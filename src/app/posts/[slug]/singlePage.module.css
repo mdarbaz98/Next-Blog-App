@@ -1,0 +1,64 @@
+.infoContainer{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.textContainer{
+    flex: 1;
+}
+.imgContainer{
+    flex: 1;
+    height: 350px;
+    position: relative;
+}
+
+
+.title{
+    font-size: 64px;
+    margin-bottom: 50px;
+}
+
+.image{
+    object-fit: cover;
+}
+
+.content{
+    display: flex;
+    gap: 50px;
+}
+
+.post{
+    flex: 5;
+    margin-top: 60px;
+}
+
+.description p{
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1536px) {
+    .title{
+        font-size: 54px;
+    }
+}
+@media screen and (max-width: 1280) {
+    .title{
+        font-size: 48px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .imgContainer{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .title{
+        font-size: 36px;
+    }
+    .description p{
+        font-size: 16px;
+    }
+}

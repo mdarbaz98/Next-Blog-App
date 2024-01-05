@@ -1,0 +1,30 @@
+.link{
+    cursor: pointer;
+}
+
+.menu{
+    display: none;
+}
+
+@media screen and (max-width : 768px) {
+    .menu{
+        display: block;
+        cursor: pointer;
+    }
+    .responsiveMenu{
+        background-color: var(--bg);
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        width: 100%;
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        padding-top: 100px;
+    }
+    .hide{
+        display: none;
+    }
+}

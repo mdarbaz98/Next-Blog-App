@@ -1,0 +1,67 @@
+.container{
+display: flex;
+flex-direction: column;
+gap: 30px;
+margin: 60px 0px;
+}
+.titleInput{
+    border: none;
+    outline: none;
+    font-size: 46px;
+    width: 100%;
+    background-color: transparent;
+    color: var(--softTextColor);
+}
+
+.editor{
+    position: relative;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    z-index: 1;
+    left: 50px;
+    top: 0px;
+}
+
+.button,.addButton{
+    border: none;
+    background-color: transparent;
+    color: var(--softTextColor);
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    border: solid 1px gray;
+    display: flex;justify-content: center;align-items: center;
+}
+
+.addButton{
+    border: solid 1px green;
+    padding: 8px;
+}
+
+.publish{
+    width: max-content;
+    padding: 6px 24px;
+    border-radius: 20px;
+    border: none;
+    background-color: darkgreen;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .titleInput{
+        font-size: 36px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .titleInput{
+        font-size: 28px;
+    }
+}
