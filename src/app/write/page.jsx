@@ -90,10 +90,7 @@ function Write() {
   }
 
   function createSlug(title) {
-    // Convert to lowercase and replace spaces with dashes
     let slug = title.toLowerCase().replace(/\s+/g, "-");
-
-    // Remove special characters
     slug = slug.replace(/[^\w-]/g, "");
 
     return slug;
