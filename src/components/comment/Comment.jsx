@@ -4,12 +4,10 @@ import React, { useState } from "react";
 import { IoIosSend } from "react-icons/io";
 import styles from "./comment.module.css";
 import Link from "next/link";
-import Image from "next/image";
 import { UserAvatar } from "../userAvatar/UserAvatar";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { commentsFetcher } from "@/api/comments";
-import baseURL from "@/api/baseUrl";
 
 export default function Comment({ postSlug }) {
 
