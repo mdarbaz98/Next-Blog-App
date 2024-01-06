@@ -47,7 +47,7 @@ async function CardList({ page, category }) {
           return <Card key={item._id} post={item} />;
         })}
       </div>
-      <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
+      <Pagination page={page} category={category} hasNext={hasNext} hasPrev={hasPrev} />
     </div>
   );
 }
