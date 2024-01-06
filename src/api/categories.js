@@ -1,6 +1,6 @@
 
 export const getCategories = async () => {
-    const res = await fetch(`http://localhost:3000/api/categories`, {
+    const res = await fetch(`${process.env.APP_LIVE_SERVER_URL}/api/categories`, {
       cache: "no-store",
     });
   

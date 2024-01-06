@@ -16,7 +16,7 @@ export default function Comment({ postSlug }) {
   const [comment , setComment] = useState('')
   const { status } = useSession();
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `${process.env.APP_LIVE_SERVER_URL}/api/comments?postSlug=${postSlug}`,
     commentsFetcher
   );
 
